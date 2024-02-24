@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Media Player with Cover Art and Queue</title>
+</head>
+<body>
+
+  <div class="media-player">
+    <audio id="myAudio"></audio>
+    <div class="cover-art-container">
+      <img id="coverArt" src="default-cover.jpg" alt="Cover Art">
+      <h2 id="currentSongTitle">Song Title</h2>
+    </div>
+    <div class="controls">
+      <button class="control-button previous" onclick="playPrevious()">&#9668; Previous</button>
+      <button class="control-button play-pause" onclick="togglePlayPause()">Play/Pause</button>
+      <button class="control-button next" onclick="playNext()">Next &#9658;</button>
+      <input type="range" class="seek-bar" value="0" max="100" step="1" onchange="updateSeekBar(this.value)">
+      <span class="current-time">0:00</span>
+    </div>
+    <div class="queue">
+      <h3>Playing Queue</h3>
+      <ul id="songQueue"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
